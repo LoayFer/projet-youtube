@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Clone with Sidebar</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  
+  <header class="main-header">
+    <div class="header-content">
+      <div class="left-section">
+        <button class="menu-btn" aria-label="Ouvrir le menu">
+          <span class="material-icons">menu</span>
+        </button>
+        <img src="https://picsum.photos/120/30?random=1" alt="Logo de YouTube" class="youtube-logo">
+      </div>
+      <form class="search-bar" role="search">
+        <input type="text" placeholder="Recherche" aria-label="Recherche">
+        <button type="submit" class="search-button" aria-label="Recherche">
+          <span class="material-icons">search</span>
+        </button>
+      </form>
+      <div class="header-icons">
+        <button class="icon-btn" aria-label="Créer une vidéo">
+          <span class="material-icons">videocam</span>
+        </button>
+        <button class="icon-btn" aria-label="Applications">
+          <span class="material-icons">apps</span>
+        </button>
+        <button class="icon-btn" aria-label="Notifications">
+          <span class="material-icons">notifications</span>
+        </button>
+        <button class="icon-btn" aria-label="Compte">
+          <span class="material-icons">account_circle</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  
+  <nav class="categories-bar">
+    <ul>
+      <li><button>Accueil</button></li>
+      <li><button>Tendance</button></li>
+      <li><button>Musique</button></li>
+      <li><button>Jeux</button></li>
+      <li><button>Direct</button></li>
+      <li><button>Sport</button></li>
+      <li><button>Actualités</button></li>
+      <li><button>Dernières vidéos</button></li>
+      <li><button>Populaire</button></li>
+      <li><button>Science & Tech</button></li>
+      <li><button>Plus</button></li>
+    </ul>
+  </nav>
+
+  
+  <aside class="left-sidebar">
+    <ul>
+      <li><button><span class="material-icons">home</span> Home</button></li>
+      <li><button><span class="material-icons">flash_on</span> Shorts</button></li>
+      <li><button><span class="material-icons">subscriptions</span> Subscriptions</button></li>
+      <li><button><span class="material-icons">history</span> History</button></li>
+      <li><button><span class="material-icons">playlist_play</span> Playlists</button></li>
+      <li><button><span class="material-icons">video_library</span> Your videos</button></li>
+      <li><button><span class="material-icons">movie</span> Your movies</button></li>
+      <li><button><span class="material-icons">watch_later</span> Watch later</button></li>
+      <li><button><span class="material-icons">thumb_up</span> Liked videos</button></li>
+    </ul>
+  </aside>
+
+  
+  <div class="content-container">
+    <main class="video-grid">
+      
+      <script>
+        const videoData = [
+          { title: "Voyage Historique", channel: "HistoryNow", views: "8K vues", time: "5 jours", duration: "10:20" },
+          { title: "Science et Technologie", channel: "TechWorld", views: "20K vues", time: "4 jours", duration: "11:00" },
+          { title: "Apprendre la programmation ✓", channel: "Code Academy", views: "15K vues", time: "3 jours", duration: "8:45" },
+          { title: "Art & Culture", channel: "Art Channel", views: "5K vues", time: "2 jours", duration: "9:15" },
+          { title: "Derniers Jeux Vidéo", channel: "GameZone", views: "25K vues", time: "1 semaine", duration: "15:30" },
+          { title: "Voyage & Aventure", channel: "Explorer", views: "12K vues", time: "2 semaines", duration: "7:45" },
+          { title: "Les Meilleurs Films", channel: "Cinema Club", views: "30K vues", time: "1 mois", duration: "13:10" },
+          { title: "Cuisine Facile", channel: "ChefMaster", views: "18K vues", time: "3 semaines", duration: "6:30" },
+          { title: "Top 10 des Animaux", channel: "WildLife", views: "40K vues", time: "2 mois", duration: "5:20" },
+          { title: "Les Mystères de l'Univers", channel: "ScienceWorld", views: "22K vues", time: "4 semaines", duration: "12:50" },
+          { title: "Fitness & Musculation", channel: "FitLife", views: "35K vues", time: "1 mois", duration: "14:10" },
+          { title: "Développement Personnel", channel: "MindsetPro", views: "28K vues", time: "3 semaines", duration: "9:40" },
+        ];
+
+        for (let i = 0; i < videoData.length; i++) {
+          document.write(`
+            <article class="video-card">
+              <div class="thumbnail-container">
+                <img src="https://picsum.photos/300/169?random=${100 + i}" alt="Miniature de la vidéo" class="video-thumbnail">
+                <time class="video-duration">${videoData[i].duration}</time>
+              </div>
+              <div class="video-details">
+                <img src="https://picsum.photos/36/36?random=${200 + i}" alt="Icône de la chaîne" class="channel-icon">
+                <div class="video-info">
+                  <h3 class="video-title">${videoData[i].title}</h3>
+                  <div class="video-meta">
+                    <span class="channel-name">${videoData[i].channel}</span>
+                    <span class="views">${videoData[i].views}</span>
+                    <span class="upload-time">Il y a ${videoData[i].time}</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          `);
+        }
+      </script>
+    </main>
+  </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Clone with Sidebar</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <header class="main-header">
+    <div class="header-content">
+      <div class="left-section">
+        <button class="menu-btn" aria-label="Ouvrir le menu">
+          <span class="material-icons">menu</span>
+        </button>
+        
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" 
+             alt="YouTube Logo" class="youtube-logo">
+      </div>
+      <form class="search-bar" role="search">
+        <input type="text" placeholder="Recherche" aria-label="Recherche">
+        <button type="submit" class="search-button" aria-label="Recherche">
+          <span class="material-icons">search</span>
+        </button>
+      </form>
+      <div class="header-icons">
+        <button class="icon-btn" aria-label="Créer une vidéo">
+          <span class="material-icons">videocam</span>
+        </button>
+        <button class="icon-btn" aria-label="Applications">
+          <span class="material-icons">apps</span>
+        </button>
+        <button class="icon-btn" aria-label="Notifications">
+          <span class="material-icons">notifications</span>
+        </button>
+        <button class="icon-btn" aria-label="Compte">
+          <span class="material-icons">account_circle</span>
+        </button>
+      </div>
+    </div>
+  </header>
